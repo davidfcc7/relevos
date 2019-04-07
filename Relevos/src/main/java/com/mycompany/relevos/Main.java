@@ -10,5 +10,5 @@ package com.mycompany.relevos;
  * @author David
  */
 public class Main {
-    
-}
+    Principal principal = new Principal();
+    }
