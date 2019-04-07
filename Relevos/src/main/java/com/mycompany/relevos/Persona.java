@@ -119,19 +119,19 @@ public class Persona extends Thread {
 
     private void validarEquipo() {
         if (equipo.mostrarPosicion().contains("Amarrillo")){
-            String Amarillo = equipo.mostrarPosicion();
-            if (Amarillo != null){
-                System.out.println(Amarillo);
+            equipoUno = equipo.mostrarPosicion();
+            if (equipoUno != null){
+                System.out.println(equipoUno);
             }
         }else if (equipo.mostrarPosicion().contains("Azul")){
-            String azul = equipo.mostrarPosicion();
-            if (azul != null){
-                System.out.println(azul);
+            equipoDos = equipo.mostrarPosicion();
+            if (equipoDos != null){
+                System.out.println(equipoDos);
             }
         }else if (equipo.mostrarPosicion().contains("Rojo")){
-            String rojo = equipo.mostrarPosicion();
-            if (rojo != null){
-                System.out.println(rojo);
+            equipoTres = equipo.mostrarPosicion();
+            if (equipoTres != null){
+                System.out.println(equipoTres);
             }
         }
         

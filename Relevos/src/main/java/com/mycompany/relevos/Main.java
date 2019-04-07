@@ -10,8 +10,8 @@ package com.mycompany.relevos;
  * @author David
  */
 public class Main {
-    public static void Main (String [] args){
-    Principal p = new Principal();
-    p.iniciaCarrera();
+    public static void main (String [] args){
+    Principal principal = new Principal();
+    principal.iniciaCarrera();
     }
 }
