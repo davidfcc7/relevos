@@ -11,7 +11,9 @@ package com.mycompany.relevos;
  */
 public class Utilitario {
     
-    public static int Random(){
-        int random = (int) ((Math.random()* 3) + 1);
-        return random;}
+    public static int random(){
+        /*(int) ((Math.random()* n) + 1)
+        n es el valor hasta donde va a llegar y +1 es para que el valor no sea 0*/
+        int valor = (int) ((Math.random()* 3) + 1);
+        return valor;}
 }

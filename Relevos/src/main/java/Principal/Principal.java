@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.relevos;
+package Principal;
+
+
+import com.mycompany.relevos.Equipo;
+
+import com.mycompany.relevos.Persona;
 
 /**
  *
@@ -39,7 +44,7 @@ public class Principal {
             octavoCorredor.start();
             novenoCorredor.start();
         }
-        public void mostrarMedalla (String equipo){
+        public void Ganador (String equipo){
             System.out.println("GANADOR"+equipo);
             System.exit(0);
         }

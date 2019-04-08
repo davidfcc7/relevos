@@ -6,6 +6,7 @@
 package com.mycompany.relevos;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Principal.Principal;
 /**
  *
  * @author David
@@ -20,12 +21,19 @@ public class Persona extends Thread {
     private String equipoTres;
     
     public Persona ( String nombreCorredor, int inicio, int fin, Equipo equipo ){
-        this.equipo = equipo;
+        
         this.fin = fin;
         this.inicio = inicio;
         this.nombreCorredor = nombreCorredor;
+        this.equipo = equipo;
     }
-    public void Run (){
+
+    Persona() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void run() {
         if (inicio == 0){
             personaUno();}
         else{
@@ -39,6 +47,9 @@ public class Persona extends Thread {
         else{
             esperar();}
     }
+
+    
+    
     public void personaUno(){
         while (true){
             int posicionActual = avanzar(1);
@@ -50,6 +61,7 @@ public class Persona extends Thread {
                 }break;
             }
         }
+        
     }
     public void personaDos(){
         while (true){
@@ -58,7 +70,7 @@ public class Persona extends Thread {
                 equipo.setPosicionCorredorDos(66);
                 synchronized (equipo){
                     equipo.notify();
-                    inicio = 66;
+                    
                 }break;
             }
         }
@@ -77,7 +89,7 @@ public class Persona extends Thread {
                 }
                 System.out.println("EL PRIMER EQUIPO EN LLEGAR ES: "+equipo.getNombre());
                 Principal principal = new Principal();
-                principal.mostrarMedalla(equipo.getNombre());
+                principal.Ganador(equipo.getNombre());
                 break;
             }
         }
@@ -93,12 +105,12 @@ public class Persona extends Thread {
     }
     public int avanzar (int numCorredor){
         try{
-            Thread.sleep(2000);
+            Thread.sleep(100);
         }
         catch (InterruptedException ex){
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
         }
-        int avanzando = Utilitario.Random();
+        int avanzando = Utilitario.random();
         if ( numCorredor == 1 ){
             equipo.setPosicionCorredorUno(equipo.getPosicionCorredorUno()+ avanzando);
             validarEquipo();

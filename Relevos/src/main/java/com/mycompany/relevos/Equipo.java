@@ -29,18 +29,18 @@ public class Equipo {
         finalizo = null;}
     
     public synchronized String mostrarPosicion(){
-        String posicion =" ";
+        String posicion ="";
         posicion = "equipo:  "+nombreEquipo;
         
         for(int i = 0; i<= 100; i++){
             if(i == posicionCorredorUno){
-                posicion = "(-)";}
+                posicion = "(°)";}
             else if (i == posicionCorredorDos){
-                posicion = "(/)";}
+                posicion = "(!)";}
             else if (i == posicionCorredorTres){
                 posicion = "(#)";}
             else{
-                posicion = "(_)";}
+                posicion = "_";}
         }
     return posicion;}
 
@@ -52,7 +52,8 @@ public class Equipo {
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param nombreEquipo
+     
      */
     public void setNombre(String nombreEquipo) {
         this.nombreEquipo = nombreEquipo;
@@ -84,6 +85,7 @@ public class Equipo {
      */
     public void setPosicion(int posicion) {
         this.posicion = posicion;
+        
     }
 
     /**
