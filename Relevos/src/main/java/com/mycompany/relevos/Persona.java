@@ -6,7 +6,6 @@
 package com.mycompany.relevos;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Principal.Principal;
 /**
  *
  * @author David

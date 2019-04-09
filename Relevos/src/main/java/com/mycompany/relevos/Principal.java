@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Principal;
+package com.mycompany.relevos;
 
 
 import com.mycompany.relevos.Equipo;
@@ -16,7 +16,7 @@ import com.mycompany.relevos.Persona;
  */
 public class Principal {
 
-        Equipo uno = new Equipo("verde");
+        Equipo uno = new Equipo("Verde");
         Equipo dos = new Equipo("Azul");
         Equipo tres = new Equipo("Rojo");
         
@@ -37,9 +37,11 @@ public class Principal {
             primerCorredor.start();
             segundoCorredor.start();
             tercerCorredor.start();
+            
             cuartoCorredor.start();
             quintoCorredor.start();
             sextoCorredor.start();
+            
             septimoCorredor.start();
             octavoCorredor.start();
             novenoCorredor.start();
