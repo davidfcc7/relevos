@@ -26,21 +26,23 @@ public class Equipo {
         this.posicionCorredorUno = 0;
         this.posicionCorredorDos = 33;
         this.posicionCorredorTres = 66;
-        finalizo = null;}
+        finalizo = null;
+    }
     
     public synchronized String mostrarPosicion(){
         String posicion ="";
-        posicion = "equipo:  "+nombreEquipo;
+        posicion = "equipo:  "+nombreEquipo+" ";
         
         for(int i = 0; i<= 100; i++){
             if(i == posicionCorredorUno){
-                posicion = "(°)";}
-            else if (i == posicionCorredorDos){
-                posicion = "(!)";}
-            else if (i == posicionCorredorTres){
-                posicion = "(#)";}
-            else{
-                posicion = "_";}
+                posicion += "1";
+            }else if (i == posicionCorredorDos){
+                posicion += "2";
+            }else if (i == posicionCorredorTres){
+                posicion += "3";
+            }else{
+                posicion += "_";
+            }
         }
     return posicion;}
 

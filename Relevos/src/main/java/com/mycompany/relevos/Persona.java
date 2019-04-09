@@ -20,6 +20,13 @@ public class Persona extends Thread {
     private String equipoDos;
     private String equipoTres;
     
+    /**
+     *
+     * @param nombreCorredor
+     * @param inicio
+     * @param fin
+     * @param equipo objeto de la clase Equipo
+     */
     public Persona ( String nombreCorredor, int inicio, int fin, Equipo equipo ){
         
         this.fin = fin;
@@ -27,11 +34,6 @@ public class Persona extends Thread {
         this.nombreCorredor = nombreCorredor;
         this.equipo = equipo;
     }
-
-    Persona() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     @Override
     public void run() {
         if (inicio == 0){
@@ -80,14 +82,17 @@ public class Persona extends Thread {
             int posicionActual = avanzar(3);
             if ( posicionActual >= 100 ){
                 equipo.setPosicionCorredorTres(100);
-                if (equipo.getNombre().equals("Amarillo")){
-                    equipo.setNombre("AMARILLO");
+                
+                
+                if (equipo.getNombre().equals("Verde")){
+                    equipo.setNombre("VERDE");
                 }else if(equipo.getNombre().equals("Azul")){
                     equipo.setNombre("AZUL");
                 }else if(equipo.getNombre().equals("Rojo")){
                     equipo.setNombre("ROJO");
                 }
-                System.out.println("EL PRIMER EQUIPO EN LLEGAR ES: "+equipo.getNombre());
+                
+                
                 Principal principal = new Principal();
                 principal.Ganador(equipo.getNombre());
                 break;
@@ -105,14 +110,14 @@ public class Persona extends Thread {
     }
     public int avanzar (int numCorredor){
         try{
-            Thread.sleep(100);
+            Thread.sleep(300);
         }
         catch (InterruptedException ex){
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
         }
         int avanzando = Utilitario.random();
         if ( numCorredor == 1 ){
-            equipo.setPosicionCorredorUno(equipo.getPosicionCorredorUno()+ avanzando);
+            equipo.setPosicionCorredorUno(equipo.getPosicionCorredorUno()+avanzando);
             validarEquipo();
             return equipo.getPosicionCorredorUno();
         }
@@ -130,7 +135,7 @@ public class Persona extends Thread {
     }
 
     private void validarEquipo() {
-        if (equipo.mostrarPosicion().contains("Amarrillo")){
+        if (equipo.mostrarPosicion().contains("Verde")){
             equipoUno = equipo.mostrarPosicion();
             if (equipoUno != null){
                 System.out.println(equipoUno);

@@ -16,7 +16,7 @@ import com.mycompany.relevos.Persona;
  */
 public class Principal {
 
-        Equipo uno = new Equipo("Amarillo");
+        Equipo uno = new Equipo("verde");
         Equipo dos = new Equipo("Azul");
         Equipo tres = new Equipo("Rojo");
         
@@ -45,7 +45,8 @@ public class Principal {
             novenoCorredor.start();
         }
         public void Ganador (String equipo){
-            System.out.println("GANADOR"+equipo);
+            System.out.println("GANADOR: \n");
+            System.out.println(" \t\t"+equipo);
             System.exit(0);
         }
     }
