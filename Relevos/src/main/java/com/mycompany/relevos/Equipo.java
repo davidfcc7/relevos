@@ -29,13 +29,27 @@ public class Equipo {
         finalizo = null;
     }
     
+    String rojo ="\033[31m"; //Declaro color rojo 
+    String verde ="\033[32m"; //Decalro color verde
+    String azul ="\033[34m";
+    
     public synchronized String mostrarPosicion(){
         String posicion ="";
-        posicion = "equipo:  "+nombreEquipo+" ";
+        ///posicion = "Equipo:  "+nombreEquipo+" ";
+        
+        if(nombreEquipo.equals("Verde")){
+            posicion = "  "+verde+nombreEquipo+" ";
+        }
+        if(nombreEquipo.equals("Azul")){
+            posicion = "  "+azul+nombreEquipo+" ";
+        }
+        if(nombreEquipo.equals("Rojo")){
+            posicion = "  "+rojo+nombreEquipo+" ";
+        }
         
         for(int i = 0; i<= 100; i++){
             if(i == posicionCorredorUno){
-                posicion += "1";
+                posicion += "1";                
             }else if (i == posicionCorredorDos){
                 posicion += "2";
             }else if (i == posicionCorredorTres){
